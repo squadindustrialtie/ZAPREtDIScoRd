@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Установка Zapret Discord на Windows</title>
+<meta name="description" content="Установка, Secure DNS, запуск стратегии, service.bat и откат.">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<link rel="canonical" href="https://duckrecollect.github.io/zapretdiscord/install.html">
+<meta property="og:type" content="website"><meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Установка Zapret Discord на Windows"><meta property="og:description" content="Установка, Secure DNS, запуск стратегии, service.bat и откат."><meta property="og:url" content="https://duckrecollect.github.io/zapretdiscord/install.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Установка Zapret Discord на Windows", "url": "https://duckrecollect.github.io/zapretdiscord/install.html", "description": "Установка, Secure DNS, запуск стратегии, service.bat и откат.", "inLanguage": "ru-RU"}</script>
+<style>
+:root{color-scheme:light dark;--bg:#0d1117;--card:#161b22;--text:#e6edf3;--muted:#9da7b3;--line:#30363d;--link:#58a6ff;--accent:#238636}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header,main,footer{max-width:980px;margin:auto;padding:22px}header{border-bottom:1px solid var(--line)}header a{color:var(--link);text-decoration:none}.brand{font-weight:700;font-size:1.1rem}.muted,.meta{color:var(--muted)}nav{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}nav a,.pill{border:1px solid var(--line);border-radius:999px;padding:6px 11px;color:var(--link);text-decoration:none;font-size:.92rem}
+.hero,.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin:18px 0}.hero h1{line-height:1.2;margin-top:0}h1,h2,h3{line-height:1.25}a{color:var(--link)}code{background:#21262d;padding:2px 5px;border-radius:5px}pre{overflow:auto;background:#161b22;padding:14px;border-radius:9px}li{margin:5px 0}.cta{display:inline-block;background:var(--accent);color:white;text-decoration:none;padding:10px 16px;border-radius:8px;font-weight:700;margin:5px 8px 5px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}.card{border:1px solid var(--line);border-radius:12px;padding:15px;background:var(--card)}footer{border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}table{border-collapse:collapse;width:100%}td,th{border:1px solid var(--line);padding:8px;text-align:left}blockquote{border-left:3px solid var(--line);margin-left:0;padding-left:14px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header><a class="brand" href="./">Установка Zapret Discord на Windows</a><nav><a href="./">Главная</a><a href="./faq.html">FAQ</a><a href="./install.html">Установка</a><a href="./troubleshooting.html">Диагностика</a><a href="./discord.html">Discord</a><a href="./youtube.html">YouTube</a><a href="./telegram.html">Telegram</a><a href="./changelog.html">Changelog</a><a href="./keywords.html">Ключевые темы</a></nav></header>
+<main><article><h1>Установка Zapret Discord на Windows</h1>
+<p>Эта инструкция относится к архиву <code>zapretdiscord</code> (тег релиза <code>1.10.4</code>). Сборка использует Zapret/WinDivert. Перед запуском прочитайте исходный <code>README.md</code> и проверьте состав архива.</p>
+<h2>1. Подготовка</h2>
+<ol>
+<li>Убедитесь, что используете Windows 10 или Windows 11, как указано в исходной документации.</li>
+<li>Скачивайте ZIP только со страницы Releases именно того репозитория, который собираетесь использовать.</li>
+<li>Проверьте имя файла и, если доступны, контрольные суммы из комплекта.</li>
+<li>В свойствах загруженного архива проверьте состояние блокировки Windows. Снимайте блокировку только при доверии к источнику.</li>
+<li>Распакуйте архив в короткую папку без кириллицы и специальных символов, например <code>C:\Tools\Zapret</code>.</li>
+<li>Ознакомьтесь с <code>Files/README.md</code> перед запуском любых сценариев.</li>
+</ol>
+<h2>2. Secure DNS</h2>
+<p>В README рекомендуется включить Secure DNS / DNS-over-HTTPS в браузере. В Windows 11 эту настройку также можно задать на уровне системы. Выберите DNS-поставщика, который доступен из вашей сети. Изменение DNS не гарантирует обход ограничений и не заменяет проверку маршрута.</p>
+<h2>3. Проверка стратегии</h2>
+<ol>
+<li>Закройте приложения, которые планируете тестировать.</li>
+<li>Откройте нужный <code>general*.bat</code> из распакованного комплекта с правами администратора, если это требуется сценарием.</li>
+<li>Проверяйте одну стратегию за раз.</li>
+<li>После запуска откройте целевой ресурс и отдельно протестируйте функции приложения: веб-страницу, видео, голосовой чат или Telegram Web.</li>
+<li>Если стратегия не помогает, остановите её и проверьте следующую. Не запускайте несколько стратегий одновременно без прямого указания в README.</li>
+</ol>
+<h2>4. Службы и диагностика</h2>
+<p>Если в архиве присутствует <code>service.bat</code>, в README описаны пункты Install Service, Remove Services, Check Status, Game Filter, Update Hosts File и Run Diagnostics. Набор доступных пунктов зависит от версии. Используйте меню и не выполняйте незнакомые команды вручную.</p>
+<h2>5. Проверка сервисов</h2>
+<ul>
+<li><strong>Discord:</strong> отдельно проверьте вход, текстовые каналы и голосовое подключение/RTC.</li>
+<li><strong>YouTube:</strong> проверьте загрузку главной страницы и воспроизведение видео; при проблеме с воспроизведением проверьте расширения и блокировщик рекламы.</li>
+<li><strong>Telegram Web:</strong> если доступна функция Update Hosts File, примените её по README и повторите проверку.</li>
+<li><strong>Telegram Desktop:</strong> README предупреждает, что работа не гарантируется; может понадобиться отдельный локальный или публичный прокси, например tg-ws-proxy.</li>
+</ul>
+<h2>6. Откат</h2>
+<p>Если возникли сетевые проблемы, остановите активную стратегию и используйте предусмотренную в <code>service.bat</code> функцию удаления службы. При сомнениях верните исходные настройки DNS/сети и обратитесь к документации upstream.</p>
+<blockquote>
+<p>Не отключайте антивирус или защиту Windows целиком ради запуска неизвестного файла. WinDivert — сетевой драйвер; проверяйте происхождение и контрольные суммы компонентов.</p>
+</blockquote>
+</article>
+<div class="panel"><a class="cta" href="https://github.com/DuckRecollect/zapretdiscord/releases/latest">Страница релизов GitHub</a> <a class="pill" href="https://github.com/DuckRecollect/zapretdiscord">Оригинальный репозиторий</a></div>
+</main><footer>Сторонняя сборка на основе Zapret/WinDivert. Не является официальным клиентом Discord, YouTube, Telegram или VPN-сервисом. Проверяйте инструкции и совместимость.</footer>
+</body></html>

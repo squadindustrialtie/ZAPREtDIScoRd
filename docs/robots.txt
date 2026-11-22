@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+Sitemap: https://duckrecollect.github.io/zapretdiscord/sitemap.xml

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Диагностика Zapret Discord</title>
+<meta name="description" content="Ошибки Discord Connecting, YouTube buffering, Telegram Web и WinDivert.">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<link rel="canonical" href="https://duckrecollect.github.io/zapretdiscord/troubleshooting.html">
+<meta property="og:type" content="website"><meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Диагностика Zapret Discord"><meta property="og:description" content="Ошибки Discord Connecting, YouTube buffering, Telegram Web и WinDivert."><meta property="og:url" content="https://duckrecollect.github.io/zapretdiscord/troubleshooting.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Диагностика Zapret Discord", "url": "https://duckrecollect.github.io/zapretdiscord/troubleshooting.html", "description": "Ошибки Discord Connecting, YouTube buffering, Telegram Web и WinDivert.", "inLanguage": "ru-RU"}</script>
+<style>
+:root{color-scheme:light dark;--bg:#0d1117;--card:#161b22;--text:#e6edf3;--muted:#9da7b3;--line:#30363d;--link:#58a6ff;--accent:#238636}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header,main,footer{max-width:980px;margin:auto;padding:22px}header{border-bottom:1px solid var(--line)}header a{color:var(--link);text-decoration:none}.brand{font-weight:700;font-size:1.1rem}.muted,.meta{color:var(--muted)}nav{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}nav a,.pill{border:1px solid var(--line);border-radius:999px;padding:6px 11px;color:var(--link);text-decoration:none;font-size:.92rem}
+.hero,.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin:18px 0}.hero h1{line-height:1.2;margin-top:0}h1,h2,h3{line-height:1.25}a{color:var(--link)}code{background:#21262d;padding:2px 5px;border-radius:5px}pre{overflow:auto;background:#161b22;padding:14px;border-radius:9px}li{margin:5px 0}.cta{display:inline-block;background:var(--accent);color:white;text-decoration:none;padding:10px 16px;border-radius:8px;font-weight:700;margin:5px 8px 5px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}.card{border:1px solid var(--line);border-radius:12px;padding:15px;background:var(--card)}footer{border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}table{border-collapse:collapse;width:100%}td,th{border:1px solid var(--line);padding:8px;text-align:left}blockquote{border-left:3px solid var(--line);margin-left:0;padding-left:14px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header><a class="brand" href="./">Диагностика Zapret Discord</a><nav><a href="./">Главная</a><a href="./faq.html">FAQ</a><a href="./install.html">Установка</a><a href="./troubleshooting.html">Диагностика</a><a href="./discord.html">Discord</a><a href="./youtube.html">YouTube</a><a href="./telegram.html">Telegram</a><a href="./changelog.html">Changelog</a><a href="./keywords.html">Ключевые темы</a></nav></header>
+<main><article><h1>Диагностика проблем — zapretdiscord</h1>
+<p>Этот документ дополняет исходный README и не заменяет его. Проверяйте по одному параметру за раз: DNS, стратегию, приложение и состояние служб.</p>
+<h2>Базовая последовательность</h2>
+<ol>
+<li>Проверьте, открывается ли ресурс без активной стратегии.</li>
+<li>Убедитесь, что используется актуальный релиз <code>zapretdiscord</code>.</li>
+<li>Проверьте Secure DNS согласно README.</li>
+<li>Запустите Run Diagnostics через <code>service.bat</code>, если этот пункт доступен.</li>
+<li>Остановите текущую стратегию и протестируйте другую.</li>
+<li>Запишите результат, версию Windows и тип подключения.</li>
+</ol>
+<h2>Discord: Connecting, RTC и голос</h2>
+<ul>
+<li>Проверьте Discord в браузере по адресу https://discord.com/app.</li>
+<li>Если браузер работает, а приложение нет, закройте Discord и выполните рекомендованную README очистку кэша.</li>
+<li>Для Canary и Development используйте соответствующий пункт диагностики, если он присутствует.</li>
+<li>Если текст работает, но голос — нет, проверьте UDP/RTC и параметры Game Filter.</li>
+<li>После переключения Game Filter перезапустите стратегию, если этого требует README.</li>
+</ul>
+<h2>YouTube: видео не запускается или буферизуется</h2>
+<ul>
+<li>Проверьте тот же ролик в другом браузере.</li>
+<li>Временно отключите блокировщик рекламы/расширения только как диагностический тест, затем верните их настройки.</li>
+<li>Проверьте Secure DNS и другую стратегию.</li>
+<li>Медленная загрузка не всегда означает DPI-фильтрацию: проверьте скорость и стабильность обычного соединения.</li>
+</ul>
+<h2>Telegram: веб и Desktop</h2>
+<ul>
+<li>Для Telegram Web README упоминает Update Hosts File; повторите проверку после обновления hosts.</li>
+<li>Для Telegram Desktop README не гарантирует работу через Zapret и предлагает отдельный локальный/публичный прокси.</li>
+<li>Не считайте исправление веб-версии доказательством исправления Desktop.</li>
+</ul>
+<h2>Ошибки WinDivert и антивируса</h2>
+<p>WinDivert может определяться защитными программами как сетевой инструмент. Проверьте подпись/контрольную сумму и источник файла. Не отключайте защиту полностью и не добавляйте сомнительные файлы в исключения без проверки.</p>
+<h2>Служба не устанавливается или не запускается</h2>
+<ul>
+<li>Проверьте запуск с достаточными правами.</li>
+<li>Посмотрите Check Status и Run Diagnostics, если они есть.</li>
+<li>Не запускайте параллельно несколько <code>general*.bat</code>.</li>
+<li>Используйте Remove Services через меню проекта для удаления службы.</li>
+</ul>
+<h2>Что приложить к отчёту</h2>
+<p>Укажите точную ошибку, версию Windows, имя стратегии, тип сети (домашняя/мобильная/корпоративная), какой сервис тестировали и результат браузерной проверки. Не прикладывайте токены, пароли, личные IP или другие секретные данные.</p>
+</article>
+<div class="panel"><a class="cta" href="https://github.com/DuckRecollect/zapretdiscord/releases/latest">Страница релизов GitHub</a> <a class="pill" href="https://github.com/DuckRecollect/zapretdiscord">Оригинальный репозиторий</a></div>
+</main><footer>Сторонняя сборка на основе Zapret/WinDivert. Не является официальным клиентом Discord, YouTube, Telegram или VPN-сервисом. Проверяйте инструкции и совместимость.</footer>
+</body></html>

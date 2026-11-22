@@ -1,0 +1,17 @@
+# Zapret Discord
+
+> Documentation index for the `zapretdiscord` repository. Package tag: 1.10.4. This project is a third-party Windows Zapret/WinDivert build; consult the repository README and verify files before execution.
+
+- [Documentation home](https://duckrecollect.github.io/zapretdiscord/)
+- [FAQ](https://duckrecollect.github.io/zapretdiscord/faq.html)
+- [Installation](https://duckrecollect.github.io/zapretdiscord/install.html)
+- [Troubleshooting](https://duckrecollect.github.io/zapretdiscord/troubleshooting.html)
+- [Discord guide](https://duckrecollect.github.io/zapretdiscord/discord.html)
+- [YouTube guide](https://duckrecollect.github.io/zapretdiscord/youtube.html)
+- [Telegram guide](https://duckrecollect.github.io/zapretdiscord/telegram.html)
+- [Changelog](https://duckrecollect.github.io/zapretdiscord/changelog.html)
+- [Search topics](https://duckrecollect.github.io/zapretdiscord/keywords.html)
+- [Source repository](https://github.com/DuckRecollect/zapretdiscord)
+- [Releases](https://github.com/DuckRecollect/zapretdiscord/releases/latest)
+
+Telegram Desktop may require a separate proxy; this package does not provide VPN subscriptions or proxy credentials. V2RayTun-labelled packages must not be represented as V2RayTun clients: see V2RAYTUN.md for the actual archive contents.
